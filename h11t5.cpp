@@ -7,14 +7,20 @@ struct Node{
 };
 typedef struct Node Node;
 
+struct LinkedList{
+	Node *head;
+	Node *tail;
+};
+typedef struct LinkedList LinkedList;
+
 
 void add(struct Node *head, int value) {
          // if list is NULL, we can do nothing.
 
-         Node *p=NULL;
-         p=new Node;// temporary pointer
+         Node *p = new Node;
+         //p=new Node;// temporary pointer
 
-         p->data=value;// Set p's data field to the value passed in
+         p->data = value;// Set p's data field to the value passed in
                  
         // if (head == NULL){
           //   head=p;
@@ -24,8 +30,8 @@ void add(struct Node *head, int value) {
 
 
          // }else{
-          p->link=head;
-          head=p;
+          p->link = head;
+          head = p;
          // }
           // If Add p at the end of the list
                       // Set p's next field point to the previous head of the list
@@ -75,29 +81,29 @@ void print(struct Node *head){
 int main (){
     Node *head=NULL;
     head=new Node;
-    head->data=6;
-    head->link=new Node;
-    head->link->data=6;
-    head->link->link=new Node;
-    head->link->link->data=1;
-    head->link->link->link=new Node;
-    head->link->link->link->data=3;
-    head->link->link->link->link=new Node;
-    head->link->link->link->link->data=7;
-    head->link->link->link->link->link=new Node;
-    head->link->link->link->link->link->data=6;
-    head->link->link->link->link->link->link=NULL;
+    //head->data=6;
+    //head->link=new Node;
+    //head->link->data=6;
+    //head->link->link=new Node;
+    //head->link->link->data=1;
+    //head->link->link->link=new Node;
+    //head->link->link->link->data=3;
+    //head->link->link->link->link=new Node;
+    //head->link->link->link->link->data=7;
+    //head->link->link->link->link->link=new Node;
+    //head->link->link->link->link->link->data=6;
+    //head->link->link->link->link->link->link=NULL;
     int x=6;
     int y=7;
     int z=3;
     int a=5;
-   // add(head, x);
-   // add(head,a);
-   // add(head,z);
-   // add(head,x);
-   // add(head,y);
-   // add(head,x);
-   // print(head);
+    add(head, x);
+    add(head,a);
+    add(head,z);
+    add(head,x);
+    add(head,y);
+    add(head,x);
+    print(head);
     deleteNode (head, x);
     print(head);
     return 0;
